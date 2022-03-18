@@ -14,6 +14,7 @@ public interface Queue<Item> extends Iteration {
     
     public void enqueue(Item i);
     public Item dequeue();
+    public Item get(int index);
     public int size();
     public void enqueueWithPriority(Item i);
     public Item peek();

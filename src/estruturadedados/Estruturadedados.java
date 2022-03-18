@@ -1,5 +1,6 @@
 package estruturadedados;
 
+import estruturas.DoubleLinkedList;
 import estruturas.LinkedQueue;
 import estruturas.PilhaArray;
 import estruturas.DynamicStack;
@@ -9,16 +10,14 @@ public class Estruturadedados {
 
     public static void main(String[] args) {
        
-       LinkedQueue<Integer> queue = new LinkedQueue<>();
-       
-       queue.enqueue(1);
-       queue.enqueueWithPriority(-4);
-       queue.enqueue(2);
-       queue.enqueue(3);
-       queue.enqueue(4);
-       queue.enqueueWithPriority(5);
-       queue.enqueueWithPriority(10);
-       queue.iterate();
+        DoubleLinkedList<Integer> t = new DoubleLinkedList<>();
+        
+        t.add(2);
+        t.add(3);
+        t.add(4);
+        t.iterate(true);
+        
+  
      
     }
 }

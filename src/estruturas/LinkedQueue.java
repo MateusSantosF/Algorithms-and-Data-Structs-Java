@@ -41,6 +41,18 @@ public class LinkedQueue<Item> implements Queue<Item> {
        }
            
     }
+
+    @Override
+    public Item get(int index) {
+        if(index > size())
+            throw new QueueException("Index out of range");
+        
+        Node temp = first;
+        for(int i = 0; i < index; i++){
+            temp = temp.nextNode;
+        }
+        return temp.value;
+    }
     
     private class Node{
         Node nextNode;
@@ -113,6 +125,8 @@ public class LinkedQueue<Item> implements Queue<Item> {
             temp = temp.nextNode;
         }
     }
+    
+    
 
    
 }
