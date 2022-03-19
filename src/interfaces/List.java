@@ -6,18 +6,18 @@ package interfaces;
 
 /**
  *
- * @author mateu
+ * @author Mateus Santos
  */
 public interface List<Item> extends Iteration {
      
     public boolean isEmpty();
     public void add(Item item);
     public void addFirst(Item item);
-    public void addLast(Item item);
     public Item get(int index);
     public Item remove(int index);
     public Item removeFirst();
     public Item removeLast();
     public Item getFirst();
     public Item getLast();
+    public int length();
 }

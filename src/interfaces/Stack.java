@@ -1,5 +1,10 @@
 package interfaces;
 
+/**
+ *
+ * @author Mateus Santos
+ */
+
 public interface Stack<Item> extends Iteration{
     public void empilhar(Item item);
     public Item desempilhar();

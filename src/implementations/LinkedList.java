@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package estruturas;
+package implementations;
 
-import excessao.ListException;
+import exceptions.ListException;
 import interfaces.List;
 
 /**
@@ -24,6 +24,11 @@ public class LinkedList<Item> implements List<Item> {
         this.first = null;
         this.last = null;
         this.size = 0;
+    }
+
+    @Override
+    public int length() {
+        return size;
     }
     
     private class Node {
@@ -118,6 +123,40 @@ public class LinkedList<Item> implements List<Item> {
         }
         size++;
     }
+    
+    public void add(int index, Item item){
+        
+        if(index > size || index < 0) {
+            throw new ListException("Index out of range");
+        }
+        
+        Node newNode = new Node();
+        newNode.item = item;
+        newNode.next = null;
+        
+        if (isEmpty()) {
+            first = newNode;
+            last = newNode;
+        }else  if(index == 0 ){
+            addFirst(item);
+        }else if(index == size){
+            add(item);
+        }else{
+            
+            Node temp = first;
+            for(int i = 0; i < index-1; i++){
+                temp = temp.next;
+            }
+            System.out.println("t=>"+temp.item);
+            Node oldNode = temp.next;
+            temp.next = newNode;
+            newNode.next = oldNode;           
+        
+        }
+            
+       size++;
+        
+    }
 
     @Override
     public void addFirst(Item item) {
@@ -136,21 +175,7 @@ public class LinkedList<Item> implements List<Item> {
         size++;
     }
 
-    @Override
-    public void addLast(Item item) {
-        Node newNode = new Node();
-        newNode.item = item;
-        newNode.next = null;
-        if (isEmpty()) {
-            first = newNode;
-            last = newNode;
-
-        } else {
-            last.next = newNode;
-            last = newNode;
-        }
-        size++;
-    }
+ 
 
     @Override
     public Item get(int index) {

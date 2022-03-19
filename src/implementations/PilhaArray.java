@@ -1,6 +1,11 @@
-package estruturas;
+package implementations;
 
-import excessao.StackException;
+/**
+ *
+ * @author Mateus Santos
+ */
+
+import exceptions.StackException;
 
 public class PilhaArray{
     

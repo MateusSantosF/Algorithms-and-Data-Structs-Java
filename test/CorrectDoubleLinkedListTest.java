@@ -1,21 +1,20 @@
 
+import implementations.DoubleLinkedList;
 import implementations.LinkedList;
 import static org.junit.Assert.assertArrayEquals;
-import junit.framework.TestCase;
 import org.junit.Test;
 
 
 /**
  *
  * @author Mateus Santos
- * @Github MateusSantosF
  */
-public class CorrectListTest extends TestCase {
+public class CorrectDoubleLinkedListTest {
     
     @Test
-    public void testList01(){
-        
-        LinkedList<Integer> linkedList = new LinkedList<>();
+    
+    public void testDoubleLinkedList01(){
+        DoubleLinkedList<Integer> linkedList = new DoubleLinkedList<>();
         Integer arr[] = {1,-1,2,3,5};
         Integer arrTest[] = new Integer[arr.length];
         
@@ -39,7 +38,5 @@ public class CorrectListTest extends TestCase {
         
       
         assertArrayEquals(arr, arrTest);
-        
     }
-    
 }

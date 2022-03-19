@@ -1,8 +1,12 @@
-package estruturas;
+package implementations;
 
-import excessao.StackException;
+import exceptions.StackException;
 import interfaces.Stack;
 
+/**
+ *
+ * @author Mateus Santos
+ */
 public class DynamicStack<Item> implements Stack {
           
     private Node<Item> topo;

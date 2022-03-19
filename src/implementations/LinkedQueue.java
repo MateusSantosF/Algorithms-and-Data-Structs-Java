@@ -3,14 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package estruturas;
+package implementations;
 
-import excessao.QueueException;
+import exceptions.QueueException;
 import interfaces.Queue;
 
 /**
  *
- * @author aluno
+ * @author Mateus Santos
  */
 public class LinkedQueue<Item> implements Queue<Item> {
     

@@ -1,5 +1,5 @@
 
-import estruturas.LinkedQueue;
+import implementations.LinkedQueue;
 import junit.framework.TestCase;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,7 +13,7 @@ import static org.junit.Assert.assertArrayEquals;
 
 /**
  *
- * @author aluno
+ * @author Mateus Santos
  */
 public class CorrectQueueTest extends TestCase {
     
