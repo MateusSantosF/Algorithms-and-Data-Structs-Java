@@ -9,49 +9,49 @@ import interfaces.Stack;
  */
 public class DynamicStack<Item> implements Stack {
           
-    private Node<Item> topo;
-    private int tam;
+    private Node<Item> top;
+    private int size;
 
     @Override
-    public Item desempilhar() {
-        if(estaVazia()) throw new StackException("Pilha Vazia - Erro Desempilha");
-        Item item = topo.item;
-        topo = topo.ant;
-        tam--;
+    public Item pop() {
+        if(isEmpty()) throw new StackException("Pilha Vazia - Erro Desempilha");
+        Item item = top.item;
+        top = top.ant;
+        size--;
         return item;
     }
 
     @Override
-    public boolean estaVazia() {
-        return (topo == null);
+    public boolean isEmpty() {
+        return (top == null);
     }
 
     @Override
-    public Item topo() {
-        if(estaVazia()) throw new StackException("Pilha Vazia - Erro Topo");
-        return topo.item;
+    public Item peek() {
+        if(isEmpty()) throw new StackException("Stack is Empty");
+        return top.item;
     }
 
     @Override
-    public int tamanho() {
-        return tam;
+    public int size() {
+        return size;
     }
 
     @Override
     public void iterate() {
-        while(!estaVazia()){
-            System.out.println("Desempilhou: "+topo.item.toString());
-            desempilhar();
+        while(!isEmpty()){
+            System.out.println("pop : "+top.item.toString());
+            pop();
         }
     }
 
     @Override
-    public void empilhar(Object item) {
-        Node<Item> anterior = topo;
-        topo = new Node<Item>();
-        topo.item = (Item) item;
-        topo.ant = anterior;
-        tam++;
+    public void push(Object item) {
+        Node<Item> anterior = top;
+        top = new Node<Item>();
+        top.item = (Item) item;
+        top.ant = anterior;
+        size++;
     }
     
     private static class Node<Item>{
@@ -60,8 +60,8 @@ public class DynamicStack<Item> implements Stack {
     }
     
     public DynamicStack(){
-        topo = null;
-        tam = 0;
+        top = null;
+        size = 0;
     }
     
     
