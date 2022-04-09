@@ -1,6 +1,7 @@
 package algorithms;
 
-import enums.SortOrdering;
+
+import javax.swing.SortOrder;
 import utils.SortingUtils;
 
 /**
@@ -29,13 +30,13 @@ public abstract class BubbleSort {
 
     }
 
-    public static <Type extends Comparable<Type>> void sort(Type[] array, SortOrdering sortOrder) {
+    public static <Type extends Comparable<Type>> void sort(Type[] array, SortOrder sortOrder) {
 
         boolean swaped;
         int size = array.length - 1;
         int indexOrdered = 0;
 
-        if (sortOrder == SortOrdering.ASCEDING) {
+        if (sortOrder == SortOrder.ASCENDING) {
             do {
                 swaped = false;
                 for (int indexDesordered = 0; indexDesordered < (size - indexOrdered); indexDesordered++) {

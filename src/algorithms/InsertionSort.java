@@ -4,7 +4,7 @@
  */
 package algorithms;
 
-import enums.SortOrdering;
+import javax.swing.SortOrder;
 import utils.SortingUtils;
 
 /**
@@ -29,25 +29,23 @@ public abstract class InsertionSort {
         }
     }
     
-     public static <Type extends Comparable<Type>> void sort(Type[] array, SortOrdering sortOrder){
+     public static <Type extends Comparable<Type>> void sort(Type[] array, SortOrder sortOrder){
         
         int size = array.length ;
         
        
-         if (sortOrder == SortOrdering.ASCEDING) {
+         if (sortOrder == SortOrder.ASCENDING) {
              for (int indexOrdered = 1; indexOrdered < size; indexOrdered++) {
-
                  int orderedPart = indexOrdered;
-
+                 
                  for (; orderedPart > 0 && array[orderedPart - 1].compareTo(array[orderedPart]) > 0; orderedPart--) {
                      SortingUtils.swap(array, orderedPart - 1, orderedPart);
                  }
              }
          }else{
              for (int indexOrdered = 1; indexOrdered < size; indexOrdered++) {
-
                  int orderedPart = indexOrdered;
-
+                 
                  for (; orderedPart > 0 && array[orderedPart - 1].compareTo(array[orderedPart]) < 0; orderedPart--) {
                      SortingUtils.swap(array, orderedPart - 1, orderedPart);
                  }
