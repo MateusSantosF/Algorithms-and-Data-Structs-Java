@@ -9,8 +9,8 @@ Este é o repositório das API's desenvolvidas durante meus estudos de Estrutura
 - [x] BubbleSort <br>
 - [x] InsertionSort <br>
 - [x] SelectionSort <br>
-- [] QuickSort <br>
-- [] HeapSort <br>
+- [ ] QuickSort <br>
+- [ ] HeapSort <br>
 
 <h3> Estruturas </h3>
 <h5>Lineares</h5>
