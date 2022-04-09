@@ -1,6 +1,8 @@
 package estruturadedados;
 
 import algorithms.BubbleSort;
+import algorithms.InsertionSort;
+import enums.SortOrdering;
 import implementations.DoubleLinkedList;
 
 
@@ -18,11 +20,18 @@ public class Estruturadedados {
        
         Integer[] array = {1,5,6,1,24,31,11,9,2};
         
-        BubbleSort.sort(array);
+        System.out.println("Bubble===");
+        BubbleSort.sort(array, SortOrdering.DESCENDING);
+        for(Integer i : array){
+            System.out.print(i + " ");
+        }
+        System.out.println("\nInsertion ====");
+        InsertionSort.sort(array, SortOrdering.DESCENDING);
         
         for(Integer i : array){
             System.out.print(i + " ");
         }
+        System.out.println("\n");
     
     }
 }
